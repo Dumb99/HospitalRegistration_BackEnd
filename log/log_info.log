@@ -1,25 +1,30 @@
-2021-06-16 13:00:02.319 [restartedMain] INFO  com.dcq.yygh.hosp.ServiceHospApplication - Starting ServiceHospApplication on DESKTOP-TJRS5PB with PID 6140 (D:\JavaWorkSpace\IntelliJ-workSpace\KS\service\service_hosp\target\classes started by DCQ in D:\JavaWorkSpace\IntelliJ-workSpace\KS)
-2021-06-16 13:00:02.322 [restartedMain] INFO  com.dcq.yygh.hosp.ServiceHospApplication - The following profiles are active: dev
-2021-06-16 13:00:02.393 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\DCQ\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
-2021-06-16 13:00:02.394 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-16 13:00:02.394 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-16 13:00:03.184 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-06-16 13:00:03.186 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2021-06-16 13:00:03.211 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
-2021-06-16 13:00:03.490 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-06-16 13:00:03.770 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8201 (http)
-2021-06-16 13:00:03.778 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8201"]
-2021-06-16 13:00:03.778 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2021-06-16 13:00:03.779 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
-2021-06-16 13:00:03.875 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2021-06-16 13:00:03.876 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1481 ms
-2021-06-16 13:00:04.745 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-06-16 13:00:04.834 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2021-06-16 13:00:04.864 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2021-06-16 13:00:05.210 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2021-06-16 13:00:05.223 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 2 custom documentation plugin(s)
-2021-06-16 13:00:05.249 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2021-06-16 13:00:05.403 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2021-06-16 13:00:05.409 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8201"]
-2021-06-16 13:00:05.439 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8201 (http) with context path ''
-2021-06-16 13:00:05.442 [restartedMain] INFO  com.dcq.yygh.hosp.ServiceHospApplication - Started ServiceHospApplication in 3.573 seconds (JVM running for 4.542)
+2021-06-19 13:04:48.174 [restartedMain] INFO  com.dcq.yygh.hosp.ServiceHospApplication - Starting ServiceHospApplication on DESKTOP-TJRS5PB with PID 10436 (D:\JavaWorkSpace\IntelliJ-workSpace\KS\service\service_hosp\target\classes started by DCQ in D:\JavaWorkSpace\IntelliJ-workSpace\KS)
+2021-06-19 13:04:48.201 [restartedMain] INFO  com.dcq.yygh.hosp.ServiceHospApplication - The following profiles are active: dev
+2021-06-19 13:04:48.248 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\DCQ\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/DCQ/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2021-06-19 13:04:48.249 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-19 13:04:48.249 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-19 13:04:49.001 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-06-19 13:04:49.003 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-06-19 13:04:49.025 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2021-06-19 13:04:49.276 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-19 13:04:49.550 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8201 (http)
+2021-06-19 13:04:49.558 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8201"]
+2021-06-19 13:04:49.558 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-19 13:04:49.558 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-06-19 13:04:49.638 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-19 13:04:49.638 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1388 ms
+2021-06-19 13:04:50.680 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-06-19 13:04:50.762 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-19 13:04:50.791 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-19 13:04:51.122 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-06-19 13:04:51.134 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 2 custom documentation plugin(s)
+2021-06-19 13:04:51.159 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-06-19 13:04:51.305 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-06-19 13:04:51.311 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8201"]
+2021-06-19 13:04:51.339 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8201 (http) with context path ''
+2021-06-19 13:04:51.341 [restartedMain] INFO  com.dcq.yygh.hosp.ServiceHospApplication - Started ServiceHospApplication in 3.645 seconds (JVM running for 4.625)
+2021-06-19 13:06:01.945 [http-nio-8201-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-19 13:06:01.946 [http-nio-8201-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-19 13:06:01.951 [http-nio-8201-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-06-19 13:06:02.083 [http-nio-8201-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-19 13:06:02.233 [http-nio-8201-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

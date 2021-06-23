@@ -1,6 +1,7 @@
 package com.dcq.yygh.cmn.service.impl;
 
 import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.util.StringUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -27,6 +28,8 @@ import java.util.List;
 @Service
 public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements DictService {
 
+
+    //根据id查询子数据
     @Cacheable(value = "dict",keyGenerator = "keyGenerator")
     @Override
     public List<Dict> findChildData(Long id) {
@@ -81,5 +84,39 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
             e.printStackTrace();
         }
         return Result.ok();
+    }
+
+    @Override
+    public String getDictName(String dictcode, String value) {
+        if(StringUtils.isEmpty(dictcode)){
+
+            QueryWrapper<Dict> wrapper = new QueryWrapper<>();
+            wrapper.eq("value",value);
+            Dict dict = baseMapper.selectOne(wrapper);
+
+            return dict.getName();
+
+        }
+        else{
+            Dict dict = getDictByDictcode(dictcode);
+            Long parentId = dict.getId();
+            Dict finalDict = baseMapper.selectOne(new QueryWrapper<Dict>().eq("parent_id", parentId).eq("value", value));
+            return finalDict.getName();
+
+        }
+    }
+
+    @Override
+    public List<Dict> findByDictCode(String dictCode) {
+        Dict dict = this.getDictByDictcode(dictCode);
+        List<Dict> childData = this.findChildData(dict.getId());
+        return childData;
+    }
+
+    private Dict getDictByDictcode(String dictcode){
+        QueryWrapper<Dict> wrapper = new QueryWrapper<>();
+        wrapper.eq("dict_code",dictcode);
+        Dict dict = baseMapper.selectOne(wrapper);
+        return dict;
     }
 }

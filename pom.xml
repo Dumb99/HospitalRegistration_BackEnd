@@ -8,6 +8,7 @@
         <module>model</module>
         <module>service_client</module>
         <module>service_gateway</module>
+        <module>service/service_oss</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

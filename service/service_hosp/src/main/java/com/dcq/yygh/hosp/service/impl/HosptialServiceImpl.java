@@ -38,7 +38,7 @@ public class HosptialServiceImpl implements HosptialService {
 
         //判断是否存在
         String hoscode = hospital.getHoscode();
-        Hospital hosptialExist = hospitalRepository.getHosptialByHoscode(hoscode);
+        Hospital hosptialExist = hospitalRepository.getHospitalByHoscode(hoscode);
 
         //存在，更新
         if(hosptialExist != null){
@@ -61,7 +61,7 @@ public class HosptialServiceImpl implements HosptialService {
 
     @Override
     public Hospital getByHoscode(String hoscode) {
-        Hospital hospital = hospitalRepository.getHosptialByHoscode(hoscode);
+        Hospital hospital = hospitalRepository.getHospitalByHoscode(hoscode);
         return hospital;
     }
 
@@ -106,11 +106,29 @@ public class HosptialServiceImpl implements HosptialService {
 
     @Override
     public String getHospName(String hoscode) {
-        Hospital hosptial = hospitalRepository.getHosptialByHoscode(hoscode);
+        Hospital hosptial = hospitalRepository.getHospitalByHoscode(hoscode);
         if(hosptial != null){
             return hosptial.getHosname();
         }
         return null;
+    }
+
+    @Override
+    public List<Hospital> findByHosName(String hosname) {
+        return hospitalRepository.findHospitalByHosnameLike(hosname);
+    }
+
+    @Override
+    public Map<String, Object> item(String hoscode) {
+        Map<String, Object> result = new HashMap<>();
+        //医院详情
+        Hospital hospital = this.setHospitalHosType(this.getByHoscode(hoscode));
+        result.put("hospital", hospital);
+        //预约规则
+        result.put("bookingRule", hospital.getBookingRule());
+        //不需要重复返回
+        hospital.setBookingRule(null);
+        return result;
     }
 
     private Hospital setHospitalHosType(Hospital item) {

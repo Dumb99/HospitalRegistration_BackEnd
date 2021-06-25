@@ -25,7 +25,7 @@ public class DictController {
 
 
     @ApiOperation(value = "根据dictCode获取下级节点")
-    @GetMapping(value = "/findByDictCode/{dictCode}")
+    @GetMapping(value = "findByDictCode/{dictCode}")
     public Result<List<Dict>> findByDictCode(@PathVariable String dictCode){
         List<Dict> list = dictService.findByDictCode(dictCode);
         return Result.ok(list);

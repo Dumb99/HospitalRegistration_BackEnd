@@ -188,7 +188,6 @@ public class ApiController {
         String hoscode =(String) paramMap.get("hoscode");
         //获取签名
         String sign = (String) paramMap.get("sign");
-
         //根据签名查询数据库进行校验
         String signKey = hospitalSetService.getSignKey(hoscode);
         String signKeyMd5 = MD5.encrypt(signKey);

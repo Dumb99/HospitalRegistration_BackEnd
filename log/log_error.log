@@ -1,4 +1,4 @@
-2021-06-23 09:20:11.452 [restartedMain] ERROR c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, service-hosp register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='127.0.0.1:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='service-hosp', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.111.1', networkInterface='', port=8201, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null}},
+2021-06-24 09:37:36.223 [restartedMain] ERROR c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, service-hosp register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='127.0.0.1:8848', endpoint='', namespace='', watchDelay=30000, logName='', service='service-hosp', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='10.240.161.14', networkInterface='', port=8201, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null}},
 java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/instance after all servers([127.0.0.1:8848]) tried: failed to req API:127.0.0.1:8848/nacos/v1/ns/instance. code:500 msg: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:467)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:389)
@@ -30,7 +30,7 @@ java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/instance after a
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-2021-06-23 09:20:11.772 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+2021-06-24 09:37:36.524 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
 java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/instance after all servers([127.0.0.1:8848]) tried: failed to req API:127.0.0.1:8848/nacos/v1/ns/instance. code:500 msg: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:467)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:389)

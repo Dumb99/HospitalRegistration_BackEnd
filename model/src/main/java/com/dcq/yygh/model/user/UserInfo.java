@@ -21,9 +21,9 @@ public class UserInfo extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@ApiModelProperty(value = "微信openid")
-	@TableField("openid")
-	private String openid;
+//	@ApiModelProperty(value = "微信openid")
+//	@TableField("openid")
+//	private String openid;
 
 	@ApiModelProperty(value = "昵称")
 	@TableField("nick_name")

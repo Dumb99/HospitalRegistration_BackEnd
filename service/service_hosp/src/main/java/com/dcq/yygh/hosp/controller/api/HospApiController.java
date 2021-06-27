@@ -1,4 +1,4 @@
-package com.dcq.yygh.hosp.controller;
+package com.dcq.yygh.hosp.controller.api;
 
 import com.dcq.yygh.common.result.Result;
 import com.dcq.yygh.hosp.service.DepartmentService;

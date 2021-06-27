@@ -81,7 +81,6 @@ public class HosptialServiceImpl implements HosptialService {
         pages.getContent().stream().forEach(item -> {
             this.setHospitalHosType(item);
         });
-
         return pages;
     }
 

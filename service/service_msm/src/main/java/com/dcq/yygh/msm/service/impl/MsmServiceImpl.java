@@ -25,7 +25,7 @@ public class MsmServiceImpl implements MsmService {
             mail.setTo(phone);
             mail.setFrom("hit180400304@163.com");
             mail.setSubject("登录验证码");
-            mail.setText("【预约挂号统一平台】尊敬的用户：您本次登陆的验证码为："+code+",2分钟内有效，为了保障您的账户安全，请勿向他人泄漏验证码信息");
+            mail.setText("【预约挂号统一平台】尊敬的用户：您本次登陆的验证码为："+code+",2分钟内有效，为了保障您的账户安全，请勿向他人泄漏验证码信息。");
             sender.send(mail);
             return true;
         } catch (Exception e) {

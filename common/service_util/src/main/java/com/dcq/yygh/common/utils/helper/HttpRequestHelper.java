@@ -100,6 +100,7 @@ public class HttpRequestHelper {
             byte[] reqData = postdata.toString().getBytes("utf-8");
             byte[] respdata = HttpUtil.doPost(url,reqData);
             result = new String(respdata);
+            System.out.println(JSONObject.toJSONString(paramMap));
             log.info(String.format("--> 应答结果：result data %1s", result));
         } catch (Exception ex) {
             ex.printStackTrace();

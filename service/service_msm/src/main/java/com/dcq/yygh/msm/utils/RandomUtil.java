@@ -31,23 +31,16 @@ public class RandomUtil {
     public static ArrayList getRandom(List list, int n) {
 
         Random random = new Random();
-
         HashMap<Object, Object> hashMap = new HashMap<Object, Object>();
-
-// 生成随机数字并存入HashMap
+        // 生成随机数字并存入HashMap
         for (int i = 0; i < list.size(); i++) {
-
             int number = random.nextInt(100) + 1;
-
             hashMap.put(number, i);
         }
-
-// 从HashMap导入数组
+        // 从HashMap导入数组
         Object[] robjs = hashMap.values().toArray();
-
         ArrayList r = new ArrayList();
-
-// 遍历数组并打印数据
+        // 遍历数组并打印数据
         for (int i = 0; i < n; i++) {
             r.add(list.get((int) robjs[i]));
             System.out.print(list.get((int) robjs[i]) + "\t");

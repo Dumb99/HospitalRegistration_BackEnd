@@ -1,6 +1,7 @@
 package com.dcq.yygh.hosp.service;
 
 import com.dcq.yygh.model.hosp.Schedule;
+import com.dcq.yygh.vo.hosp.ScheduleOrderVo;
 import com.dcq.yygh.vo.hosp.ScheduleQueryVo;
 import org.springframework.data.domain.Page;
 
@@ -16,5 +17,13 @@ public interface ScheduleService {
 
     Map<String, Object> getRuleSchedule(int page, int limit, String hoscode, String depcode);
 
-    List<Schedule> getDetialSchedule(String hoscode, String depcode, String workDate);
+    List<Schedule> getDetailSchedule(String hoscode, String depcode, String workDate);
+
+    Map<String,Object> getBookingScheduleRule(Integer page, Integer limit, String hoscode, String depcode);
+
+    Schedule getScheduleById(String scheduleId);
+
+    ScheduleOrderVo getScheduleOrderVo(String scheduleId);
+
+    void update(Schedule schedule);
 }

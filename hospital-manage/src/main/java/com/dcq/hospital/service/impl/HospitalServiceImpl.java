@@ -1,6 +1,7 @@
 package com.dcq.hospital.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.dcq.hospital.mapper.OrderInfoMapper;
 import com.dcq.hospital.mapper.ScheduleMapper;
 import com.dcq.hospital.model.OrderInfo;
@@ -23,8 +24,8 @@ import java.util.Map;
 @Slf4j
 public class HospitalServiceImpl implements HospitalService {
 
-	@Autowired
-	private ScheduleMapper hospitalMapper;
+    @Autowired
+    private ScheduleMapper scheduleMapper;
 
     @Autowired
     private OrderInfoMapper orderInfoMapper;
@@ -40,33 +41,49 @@ public class HospitalServiceImpl implements HospitalService {
         String reserveTime = (String)paramMap.get("reserveTime");
         String amount = (String)paramMap.get("amount");
 
-        Schedule schedule = this.getSchedule("1L");
+        System.out.println("hosScheduleId是："+hosScheduleId);
+//        Schedule schedule = this.getSchedule(hosScheduleId);
+        QueryWrapper<Schedule> wrapper = new QueryWrapper<>();
+        wrapper.eq("hoscode",hoscode);
+        wrapper.eq("depcode",depcode);
+        wrapper.eq("work_date",reserveDate);
+        wrapper.eq("work_time",reserveTime);
+        Schedule schedule = scheduleMapper.selectOne(wrapper);
+        System.out.println("我的schedule:"+schedule);
         if(null == schedule) {
+            System.out.println("因为schedule是空，所以数据异常！");
             throw new YyghException(ResultCodeEnum.DATA_ERROR);
         }
 
         if(!schedule.getHoscode().equals(hoscode)
                 || !schedule.getDepcode().equals(depcode)
-                || !schedule.getAmount().toString().equals(amount)) {
+                || !schedule.getAmount().equals(amount)) {
+            System.out.println("AAA数据异常！");
+            System.out.println("getHoscode:" + schedule.getHoscode() + "\t hoscode:"+hoscode);
+            System.out.println("getDepcode:" + schedule.getDepcode() + "\t depcode:"+depcode);
+            System.out.println("getAmount:" + schedule.getAmount() + "\t amount:"+amount);
             throw new YyghException(ResultCodeEnum.DATA_ERROR);
         }
 
         //就诊人信息
         Patient patient = JSONObject.parseObject(JSONObject.toJSONString(paramMap), Patient.class);
         log.info(JSONObject.toJSONString(patient));
+        System.out.println("patient:"+patient);
         //处理就诊人业务
         Long patientId = this.savePatient(patient);
-
+        System.out.println("patientId:"+patientId);
         Map<String, Object> resultMap = new HashMap<>();
         int availableNumber = schedule.getAvailableNumber().intValue() - 1;
         if(availableNumber > 0) {
+            System.out.println("进入avalielbale");
             schedule.setAvailableNumber(availableNumber);
-            hospitalMapper.updateById(schedule);
-
+            scheduleMapper.updateById(schedule);
+            System.out.println("设置预约记录环节！");
             //记录预约记录
             OrderInfo orderInfo = new OrderInfo();
             orderInfo.setPatientId(patientId);
             orderInfo.setScheduleId(1L);
+            //orderInfo.setScheduleId(Long.parseLong(hosScheduleId));
             int number = schedule.getReservedNumber().intValue() - schedule.getAvailableNumber().intValue();
             orderInfo.setNumber(number);
             orderInfo.setAmount(new BigDecimal(amount));
@@ -79,6 +96,7 @@ public class HospitalServiceImpl implements HospitalService {
 
             resultMap.put("resultCode","0000");
             resultMap.put("resultMsg","预约成功");
+            System.out.println("resultMap1:+"+resultMap);
             //预约记录唯一标识（医院预约记录主键）
             resultMap.put("hosRecordId", orderInfo.getId());
             //预约号序
@@ -91,7 +109,9 @@ public class HospitalServiceImpl implements HospitalService {
             resultMap.put("reservedNumber", schedule.getReservedNumber());
             //排班剩余预约数
             resultMap.put("availableNumber", schedule.getAvailableNumber());
+            System.out.println("resultMap2:+"+resultMap);
         } else {
+            System.out.println("进入else，导致错误！");
             throw new YyghException(ResultCodeEnum.DATA_ERROR);
         }
         return resultMap;
@@ -104,6 +124,7 @@ public class HospitalServiceImpl implements HospitalService {
 
         OrderInfo orderInfo = orderInfoMapper.selectById(hosRecordId);
         if(null == orderInfo) {
+            System.out.println("orderInfo空，数据异常！");
             throw new YyghException(ResultCodeEnum.DATA_ERROR);
         }
         //已支付
@@ -119,6 +140,7 @@ public class HospitalServiceImpl implements HospitalService {
 
         OrderInfo orderInfo = orderInfoMapper.selectById(hosRecordId);
         if(null == orderInfo) {
+            System.out.println("orderInfo空，A数据异常！");
             throw new YyghException(ResultCodeEnum.DATA_ERROR);
         }
         //已取消
@@ -128,7 +150,8 @@ public class HospitalServiceImpl implements HospitalService {
     }
 
     private Schedule getSchedule(String frontSchId) {
-        return hospitalMapper.selectById(frontSchId);
+        System.out.println("我进入getSdeule");
+        return scheduleMapper.selectById(frontSchId);
     }
 
     /**
@@ -137,6 +160,8 @@ public class HospitalServiceImpl implements HospitalService {
      */
     private Long savePatient(Patient patient) {
         // 业务：略
+        QueryWrapper<Patient> wrapper = new QueryWrapper<>();
+//        wrapper.eq();
         return 1L;
     }
 

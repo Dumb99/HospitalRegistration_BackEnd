@@ -34,7 +34,7 @@ public class ScheduleController {
     public Result getScheduleDetial(@PathVariable String hoscode,
                                     @PathVariable String depcode,
                                     @PathVariable String workDate){
-        List<Schedule> list = scheduleService.getDetialSchedule(hoscode,depcode,workDate);
+        List<Schedule> list = scheduleService.getDetailSchedule(hoscode,depcode,workDate);
         return Result.ok(list);
     }
 }
